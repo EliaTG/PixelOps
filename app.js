@@ -20,9 +20,11 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Rutas
 const GameRouter = require('./routes/game')
+const DevRouter = require('./routes/dev')
 
 
 app.use(GameRouter);
+app.use(DevRouter);
 
 app.listen(5050, ()=>{
     console.log("Escuchando desde el puerto 5050");

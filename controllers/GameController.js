@@ -6,3 +6,8 @@ exports.GetIndex = (req,res, next) => {
         pageTitle: "PixelOps",
     })
 }
+exports.GetGamesList = (req,res, next) => {
+    res.render("games/game-list", {
+        pageTitle: "PixelOps",
+    })
+}

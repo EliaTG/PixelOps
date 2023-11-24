@@ -1,0 +1,47 @@
+
+<main>
+        <section class="developers">
+            <section class="desc_developers ">
+                <h1 class="">Find Your Favorite Developers</h1>
+                <p class="phrase">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, ratione! Repellat aspernatur a reiciendis, culpa non tenetur optio veritatis quibusdam. Esse enim numquam.
+                </p>
+                 <p>
+                        <a href="/create-developers" class="btn btn-add my-2">Add a new Developer</a>
+                </p>
+            </section>
+            <section class="dev-group">
+                <ul>
+                    <li class='dev'>
+                        <img src='https://i.pinimg.com/originals/5c/09/09/5c0909173a1524c8270bf87557e1a7c6.jpg' />
+                    </li>
+                </ul>
+
+            </section>
+        </section>
+        <section class="album py-5 homeCards">
+                        <section class="container">
+                            <section class="row">
+                            {{#if hasDevelopers}}
+                                    <section class="ContainerDev ">
+                                        {{#each developer}}
+                                                    <section class="devDiv">
+                                                        <h5 class="card-title">{{this.name}}</h5>
+                                                         <span class=" mb-2">Location: {{this.location}}</span>
+                                                        <h1>Probando dev</h1>   
+                                                    </section>
+                                        {{/each}}
+                                     </section>
+                            </section>
+                        </section>
+         
+                {{else}}
+
+                    <h1 class="notcreated">There are not developers created</h1>
+
+                {{/if}}  
+
+                </section>
+            </section>
+        </section>
+</main>
