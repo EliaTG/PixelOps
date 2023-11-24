@@ -1,2 +1,127 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 
+:root{
+    --black: #0e0f0e;
+    --white: #f7f7f7;
+    --background: #ffffff;
+    --MenuLink: #4a4b4b;
+    --navbar-background: #fbf9f6;
+    
+ }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Space Mono', monospace;
+    background-color: var(--background);
+    height: 100vh;
+}
+.navbar{
+    display: flex;
+    padding: 20px 0 10px 0;
+    justify-content: space-around;
+    height: 10vh;
+    background-color: var(--navbar-background);
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+ul li{
+    list-style: none;
+}
+ul li a{
+    text-decoration: none;
+    color: var(--fontColor);
+    font-weight: bold;
+    font-size: 18px;
+}
+.nav-link{
+    margin: 0;
+    padding: 0 15px;
+}
+.logo img{
+    height: 50px;
+    object-fit: cover;
+}
+
+/* index */
+.game{
+    cursor: pointer;
+    display: block;
+    width: 170px;
+    height: 240px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1), 0 9px 20px 0 rgba(0, 0, 0, .25);
+    overflow: hidden;
+    transition: box-shadow .3s linear;
+
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.game img {
+    width: inherit;
+    height: inherit;
+    transform-origin: 0 50%;
+    transform: rotateY(0);
+    transition: all .45s ease;
+}
+.games{
+    display: flex;
+    justify-content: center;
+    height: 70vh;
+    align-items: center;
+    flex-direction: row;
+}
+.row{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.gamesDiv, .developerDiv{
+    width: 320px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 10px;
+    background-color: #fefffe;
+    border-radius: 10px;
+}
+.card-title{
+    margin: 10px 0 8px 0;
+}
+.text_games{
+    max-width: 700px;
+}
+.logoh1{
+    font-weight: bold;
+    font-size: 50px;
+}
+ul{
+    padding: 0;
+}
+.gameCard{
+    width: 180px;
+    height: 260px;
+    margin: 20px auto;
+}
+.form-details{
+    cursor: pointer;
+}
+.notcreated{
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Developers */
+.ContainerDev{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+}
