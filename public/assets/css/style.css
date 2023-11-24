@@ -21,10 +21,11 @@ body{
 }
 .navbar{
     display: flex;
-    padding: 20px 0 10px 0;
+    padding: 22px 0 22px 0;
     justify-content: space-around;
-    height: 10vh;
+    height: 12vh;
     background-color: var(--navbar-background);
+    margin: 0 0 20px 0;
 }
 ul{
     display: flex;
@@ -50,47 +51,22 @@ ul li a{
 }
 
 /* index */
-.game{
-    cursor: pointer;
-    display: block;
-    width: 170px;
-    height: 240px;
-    position: relative;
-    z-index: 1;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1), 0 9px 20px 0 rgba(0, 0, 0, .25);
-    overflow: hidden;
-    transition: box-shadow .3s linear;
-
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+.containerGame{
+    display: flex;
+    flex-direction: column;
 }
+
+/* Card */
 .game img {
     width: inherit;
     height: inherit;
     transform-origin: 0 50%;
     transform: rotateY(0);
     transition: all .45s ease;
+    border-radius: 15px;
 }
-.games{
-    display: flex;
-    justify-content: center;
-    height: 70vh;
-    align-items: center;
-    flex-direction: row;
-}
-.row{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-.gamesDiv, .developerDiv{
-    width: 320px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    margin: 20px 10px;
-    background-color: #fefffe;
-    border-radius: 10px;
+.game-info{
+    margin: 10vh 0 0 0;
 }
 .card-title{
     margin: 10px 0 8px 0;
@@ -113,6 +89,46 @@ ul{
 .form-details{
     cursor: pointer;
 }
+.card_index{
+    margin: 15px 25px;
+    width: 18rem;
+    text-align: center;
+}
+.ContainerGame {
+    display: flex;
+}
+.homeCards{
+    margin: 10rem 0 0 0;
+}
+/* Card */
+section.games{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+img.cover-img {
+    max-height: 270px;
+    width: auto; 
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.row{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.gamesDiv, .developerDiv{
+    width: 320px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 10px;
+    background-color: #fefffe;
+    border-radius: 10px;
+}
+
 .notcreated{
     display: flex;
     justify-content: center;
