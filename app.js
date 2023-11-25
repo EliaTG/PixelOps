@@ -6,9 +6,9 @@ const sequelize = require("./util/database");
 const Game = require("./models/Game");
 const Dev = require("./models/Dev");
 
-
-
 const app = express();
+
+const ErrorController = require("./controllers/ErrorController")
 
 app.engine("hbs", expressHbs.engine({
     layoutsDir: 'views/layout/',
@@ -29,6 +29,7 @@ const DevRouter = require('./routes/dev')
 
 app.use(GameRouter);
 app.use(DevRouter);
+app.use(ErrorController.Get404);
 
 
 sequelize.sync().then(result=>{
