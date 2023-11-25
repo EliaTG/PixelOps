@@ -1,6 +1,143 @@
-/* Config de tailwind */
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+:root{
+    --black: #0e0f0e;
+    --white: #f7f7f7;
+    --background: #ffffff;
+    --MenuLink: #4a4b4b;
+    --navbar-background: #fbf9f6;
+    
+ }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Space Mono', monospace;
+    background-color: var(--background);
+    height: 100vh;
+}
+.navbar{
+    display: flex;
+    padding: 22px 0 22px 0;
+    justify-content: space-around;
+    height: 12vh;
+    background-color: var(--navbar-background);
+    margin: 0 0 20px 0;
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+ul li{
+    list-style: none;
+}
+ul li a{
+    text-decoration: none;
+    color: var(--fontColor);
+    font-weight: bold;
+    font-size: 18px;
+}
+.nav-link{
+    margin: 0;
+    padding: 0 15px;
+}
+.logo img{
+    height: 50px;
+    object-fit: cover;
+}
+
+/* index */
+.containerGame{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Card */
+.game img {
+    width: inherit;
+    height: inherit;
+    transform-origin: 0 50%;
+    transform: rotateY(0);
+    transition: all .45s ease;
+    border-radius: 15px;
+}
+.game-info{
+    margin: 10vh 0 0 0;
+}
+.card-title{
+    margin: 10px 0 8px 0;
+}
+.text_games{
+    max-width: 700px;
+}
+.logoh1{
+    font-weight: bold;
+    font-size: 50px;
+}
+ul{
+    padding: 0;
+}
+.gameCard{
+    width: 180px;
+    height: 260px;
+    margin: 20px auto;
+}
+.form-details{
+    cursor: pointer;
+}
+.card_index{
+    margin: 15px 25px;
+    width: 18rem;
+    text-align: center;
+}
+.ContainerGame {
+    display: flex;
+}
+.homeCards{
+    margin: 10rem 0 0 0;
+}
+/* Card */
+section.games{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+img.cover-img {
+    max-height: 270px;
+    width: auto; 
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.row{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.gamesDiv, .developerDiv{
+    width: 320px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 10px;
+    background-color: #fefffe;
+    border-radius: 10px;
+}
+
+.notcreated{
+    display: flex;
+    justify-content: center;
+}
 
 
+/* Developers */
+.ContainerDev{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+}
