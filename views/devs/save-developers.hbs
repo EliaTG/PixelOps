@@ -7,15 +7,15 @@
           <form method="POST" action="{{#if editMode}}/edit-developer{{else}}/create-developer{{/if}}">
             <section class="mb-3">
               <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" name="Name" value="{{#if editMode}}{{developer.title}}{{/if}}" required/>
+              <input type="text" class="form-control" id="name" name="Name" value="{{#if editMode}}{{developer.name}}{{/if}}" required/>
             </section>
             <section class="mb-3">
               <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" name="Email" value="{{#if editMode}}{{developer.title}}{{/if}}"  required/>
+              <input type="email" class="form-control" id="email" name="Email" value="{{#if editMode}}{{developer.email}}{{/if}}"  required/>
             </section>
             <section class="mb-3">
               <label for="location" class="form-label">Location</label>
-              <input type="text" class="form-control" id="location" name="Location" value="{{#if editMode}}{{developer.title}}{{/if}}"  required/>
+              <input type="text" class="form-control" id="location" name="Location" value="{{#if editMode}}{{developer.location}}{{/if}}"  required/>
             </section>
 
 
