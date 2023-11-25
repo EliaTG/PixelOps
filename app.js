@@ -2,6 +2,10 @@ const express = require("express")
 const path = require("path")
 const expressHbs = require("express-handlebars");
 const {engine} = require("express-handlebars");
+const sequelize = require("./util/database");
+const Game = require("./models/Game");
+const Dev = require("./models/Dev");
+
 
 
 const app = express();
@@ -26,6 +30,9 @@ const DevRouter = require('./routes/dev')
 app.use(GameRouter);
 app.use(DevRouter);
 
-app.listen(5050, ()=>{
-    console.log("Escuchando desde el puerto 5050");
-})
+
+sequelize.sync().then(result=>{
+    app.listen(5050);
+  }).catch(err =>{
+      console.log(err);
+  })

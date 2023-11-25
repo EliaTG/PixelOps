@@ -141,3 +141,47 @@ img.cover-img {
     flex-direction: row;
     height: auto;
 }
+
+/* Games */
+.game{
+    padding: 20px 0;
+}
+.card{
+    padding: 0;
+}
+.btn-add{
+    border-radius: 20px;
+    background-color: var(--black);
+    color: white;
+    height: 40px;
+    margin: 10px 0 0 0;
+}
+.btn-add:hover{
+    color: white
+}
+.formCreate{
+    margin: 25px auto;
+    width: 600px;
+}
+.card-header{
+    background-color: #0a1221;
+    width: 100%;
+}
+.card-body{
+    padding: 1.5rem;
+}
+.btn-warning, .btn-danger, .btn-primary{
+    margin: 0 10px 10px 0;
+}
+
+/* 404 not found */
+div.notfound{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.notfound img{
+    height: 500px;
+    width: 500px;
+}
