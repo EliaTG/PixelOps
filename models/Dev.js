@@ -15,11 +15,17 @@ const Developer = sequelize.define("developer",{
     email:{
         type: Sequelize.STRING,
         allowNull: true,
+        unique: true,
+        validate: {
+            isEmail: true,
+        },
     },
     location:{
         type: Sequelize.STRING,
         allowNull: true,
     },
+   },  {
+        timestamps: false, 
 });
 
 module.exports = Developer;
