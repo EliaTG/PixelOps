@@ -1,27 +1,31 @@
 const Sequelize = require("sequelize");
 const sequelize = require("../util/database");
 
-const Game = sequelize.define("games",{
+const Developer = sequelize.define("developer",{
     id:{
         type: Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
         primaryKey: true,
     },
-    gameName:{
+    name:{
         type: Sequelize.STRING,
         allowNull: false,
     },
-    publication:{
+    email:{
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
+        unique: true,
+        validate: {
+            isEmail: true,
+        },
     },
-    imgUrl:{
+    location:{
         type: Sequelize.STRING,
         allowNull: true,
     },
-  },  {
-    timestamps: false, 
+   },  {
+        timestamps: false, 
 });
 
-module.exports = Game;
+module.exports = Developer;

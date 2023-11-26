@@ -1,5 +1,34 @@
 <main>
-    <section class="games-container">
-            <h1>Probando</h1>
-    </section>
+        <section class="games game-info">
+            <section class="text_games ">
+                <h1 class="logoh1">Find Your Next Games</h1>
+                <p class="phrase">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, ratione! Repellat aspernatur a reiciendis, culpa non tenetur optio veritatis quibusdam. Esse enim numquam.
+                </p>
+            </section>
+            <section class="game-group">
+                <ul>
+                    <li class='game-li'>
+                        <img class="cover-img" src='https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/blog/hero/mwiii/MWIII-REVEAL-FULL-TOUT.jpg' />
+                    </li>
+                </ul>
+            </section>
+        </section>
+                    <section class="album py-5 homeCards">
+                        <section class="container">
+                            <section class="row">
+                                <section class="ContainerGame ">
+                                        {{#each game}}
+                                            <section class="card card_index">
+                                                    <img  src="{{this.imgUrl}}" alt="{{this.gameName}}" />
+                                                    <section class="card-body">
+                                                        <h4 class="">{{this.gameName}}</h4>
+                                                        <span class="mb-2 publication_text">Publication:  {{this.publication}}</span> 
+                                                    </section>
+                                            </section> 
+                                        {{/each}}
+                                </section>   
+                </section>
+            </section>
+        </section>
 </main>

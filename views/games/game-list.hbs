@@ -1,0 +1,54 @@
+<main>
+         <section class="games game-info">
+            <section class="text_games ">
+                <h1 class="logoh1">Find Your Next Games</h1>
+                <p class="phrase">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, ratione! Repellat aspernatur a reiciendis, culpa non tenetur optio veritatis quibusdam. Esse enim numquam.
+                </p>
+                 <p>
+                        <a href="/create-game" class="btn btn-add my-2">Add a new game</a>
+                </p>
+            </section>
+            <section class="game-group">
+                <ul>
+                    <li class='game-li'>
+                        <img class="cover-img" src='https://www.amd.com/content/dam/amd/en/images/games/halo-infinite/1067881-halo-infinite-key-art.jpg' />
+                    </li>
+                </ul>
+            </section>
+        </section>
+        <section class="album py-5 homeCards">
+                        <section class="container">
+                            <section class="row">
+                            {{#if hasGame}}
+                                <section class="ContainerGame ">
+                                {{#each game}}
+                                                    <section class="card card_index">
+                                                        <img src="{{this.imgUrl}}"  alt="{{this.gameName}}"/>
+                                                            <section class="card-body">
+                                                                    <h5 class="card-title">{{this.gameName}}</h5>
+                                                                    <span class="mb-2 publication_text">Publication:  {{this.publication}}</span>                   
+                                                                    <section class="btns">
+                                                                        <form id="form-delete" class="form-inline" action="/delete-game" method="post">
+                                                                            <input type="hidden" name="gameId" value="{{this.id}}" />
+                                                                            <button type="submit" id="delete-game" class="btn btnDelete delete-game btn-danger float-end">Delete</button>
+                                                                        </form>
+                                                                        <a href="/edit-game/{{this.id}}?edit=true" class="btn btn-warning float-end btnEdit">Edit</a>
+                                                                    </section>
+                                                            </section>
+                                                    </section>
+                                 {{/each}}
+                            </section>
+                         </section>
+                    </section>
+                
+                {{else}}
+
+                    <h1 class="notcreated">There are not games created</h1>
+
+                {{/if}} 
+
+                </section>
+            </section>
+        </section>
+</main>
