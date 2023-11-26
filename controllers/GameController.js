@@ -1,11 +1,23 @@
 const Game = require("../models/Game");
 
 exports.GetIndex = (req, res, next) => {
-        res.render("games/index", {
-            pageTitle: "PixelOps",
-            bookActive: true,
+        // res.render("games/index", {
+        //     pageTitle: "PixelOps",
+        //     bookActive: true,
+        // })
+        Game.findAll().then(result =>{
+            const game = result.map((result) => result.dataValues);
+            res.render("games/index", {
+                pageTitle: "PixelOps",
+                homeActive: true,
+                game: game,
+        
+            })
+        }).catch((err) =>{
+            console.log(err);
         })
 }
+
 exports.GetGamesList = (req, res, next) => {
 
     Game.findAll().then(result =>{
