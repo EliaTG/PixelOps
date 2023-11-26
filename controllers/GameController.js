@@ -1,7 +1,5 @@
 const Game = require("../models/Game");
 
-
-
 exports.GetIndex = (req, res, next) => {
         res.render("games/index", {
             pageTitle: "PixelOps",
@@ -24,24 +22,32 @@ exports.GetGamesList = (req, res, next) => {
    
 }
 exports.GetCreateGame = (req, res, next) => {
-            res.render("games/save-game", {
-                    pageTitle: "Add a new game",
-                    editMode: false,
-                    GameActive: true,
+            Game.findAll()
+            .then(result =>{
+                const game = result.map((result) => result.dataValues);
+                    res.render("games/save-game", {
+                        pageTitle: "Add a new game",
+                        editMode: false,
+                        game: game,
+                    })
             })
+            .catch((err) => {
+                console.log(err);
+            });
    
 }
 
 exports.PostCreateGame = (req, res, next) => {
+    const gameId= req.body.gameId;
     const GameName = req.body.Name;
     const GamePublication = req.body.Publication;
-    const GameImageUrl = req.body.ImageUrl;
-
+    const GameImageUrl = req.body.ImgUrl;
 
     Game.create({
+        id: gameId,
         gameName: GameName, 
         publication: GamePublication,
-        imageUrl: GameImageUrl.path,
+        imgUrl: GameImageUrl,
     })
     .then(result =>{
         res.redirect("/games")
@@ -65,8 +71,7 @@ exports.GetEditGame = (req, res, next) => {
        if (!game) {
          return res.redirect("/games");
        }   
- 
-         res.render("games/save-games",{
+         res.render("games/save-game",{
                 pageTitle: "Edit Game",
                 editMode: edit,
                 GameActive: true,
@@ -82,19 +87,18 @@ exports.GetEditGame = (req, res, next) => {
  exports.PostEditGame = (req, res, next) => {
     const gameId= req.body.gameId;
     const GameName = req.body.Name;
-    const GamerPublication = req.body.Publication;
-    const GameImageUrl = req.body.ImageUrl;
+    const GamePublication = req.body.Publication;
+    const GameImageUrl = req.body.ImgUrl;
 
 
    Game.update({
-        id: gameId,
         name: GameName, 
-        publication: GamerPublication,
-        ImageUrl: GameImageUrl,
+        publication: GamePublication,
+        imgUrl: GameImageUrl,
     }, 
         {where: {id: gameId}}
     ).then(result =>{
-        return res.redirect("/game")
+        return res.redirect("/games")
     }).catch(err =>{
         console.log(err);
     })

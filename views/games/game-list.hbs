@@ -17,37 +17,28 @@
                 </ul>
             </section>
         </section>
-
-
         <section class="album py-5 homeCards">
                         <section class="container">
                             <section class="row">
                             {{#if hasGame}}
-
+                                <section class="ContainerGame ">
                                 {{#each game}}
-                                    <section class="ContainerGame ">
-                                            <section class="gamesDiv">
-                                                <ul>
-                                                    <li class='game gameCard'>
-                                                        <img src='https://i.pinimg.com/originals/5c/09/09/5c0909173a1524c8270bf87557e1a7c6.jpg' />
-                                                    </li>
-                                                </ul>
-                                                    <h5 class="card-title">GTA 5{{this.name}}</h5>
-                                                    <span class=" mb-2 ">Publication:  2013{{this.publication}}</span>
-                                                    <span class=" mb-2 ">Email:  xample@xample.com{{this.email}}</span>
-                                                 
-                                                   
-                                                    <section class="btns">
-                                                        <form id="form-delete" class="form-inline" action="/delete-game" method="post">
-                                                            <input type="hidden" name="gameId" value="{{this.id}}" />
-                                                            <button type="submit" id="delete-game" class="btn btnDelete delete-game btn-danger float-end">Delete</button>
-                                                        </form>
-                                                        <a href="/edit-game/{{game.id}}?edit=true"
-                                                            class="btn btn-warning float-end btnEdit">Edit</a>
+                                                    <section class="card card_index">
+                                                        <img src="{{this.imgUrl}}"  alt="{{this.gameName}}"/>
+                                                            <section class="card-body">
+                                                                    <h5 class="card-title">{{this.gameName}}</h5>
+                                                                    <span class="mb-2 publication_text">Publication:  {{this.publication}}</span>                   
+                                                                    <section class="btns">
+                                                                        <form id="form-delete" class="form-inline" action="/delete-game" method="post">
+                                                                            <input type="hidden" name="gameId" value="{{this.id}}" />
+                                                                            <button type="submit" id="delete-game" class="btn btnDelete delete-game btn-danger float-end">Delete</button>
+                                                                        </form>
+                                                                        <a href="/edit-game/{{this.id}}?edit=true" class="btn btn-warning float-end btnEdit">Edit</a>
+                                                                    </section>
+                                                            </section>
                                                     </section>
-                                            </section>
-                                    </section>
-                            {{/each}}
+                                 {{/each}}
+                            </section>
                          </section>
                     </section>
                 
