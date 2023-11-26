@@ -1,29 +1,29 @@
+
+
 <section class="row formCreate">
-    {{#if hasDevelopers}}
       <section class="card">
         <section class="card-header text-white">
           {{#if editMode}}Edit{{else}}Create{{/if}} a game
         </section>
         <section class="card-body">
           <form method="POST" action="{{#if editMode}}/edit-game{{else}}/create-game{{/if}}">
-               
-            <section class="mb-3">
-              <label for="" class="form-label">Name</label>
-              <input type="text" class="form-control" id="nameGame" name="nameGame"  value="{{#if editMode}}{{game.nameGame}}{{/if}}" required />
-            </section>
-
-           
-            <section class="mb-3">
-              <label for="" class="form-label">Publication year</label>
-              <input type="number" class="form-control" id="publication" name="publication" placeholder="2013" value="{{#if editMode}}{{game.publication}}{{/if}}" required />
-            </section>
             
-            <section class="mb-3">
-                  <label for="imageUrl" class="form-label">Image URL</label>
-                  <input type="text" class="form-control" id="imageUrl" name="ImageUrl" value="{{#if editMode}}{{game.imageUrl}}{{/if}}" required/>
-             </section>
-           
-           
+             <section class="mb-3">
+                    <label for="nameGame" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="nameGame" name="Name"  value="{{#if editMode}}{{game.nameGame}}{{/if}}" required />
+              </section>
+
+              <section class="mb-3">
+                    <label for="publication" class="form-label">Publication year</label>
+                    <input type="number" class="form-control" id="publication" name="Publication" placeholder="2013" value="{{#if editMode}}{{game.publication}}{{/if}}" required />
+              </section>
+                    
+              <section class="mb-3">
+                    <label for="imgUrl" class="form-label">Image URL</label>
+                    <input type="text" class="form-control" id="imgUrl" name="ImgUrl" value="{{#if editMode}}{{game.imgUrl}}{{/if}}" required/>
+              </section>
+
+
 
           {{#if editMode}}
 
@@ -32,16 +32,10 @@
           {{/if}}
 
           <button type="submit" class="btn btn-primary">{{#if editMode}}Edit{{else}}Create{{/if}}</button>
-           <a href="/game" type="button" class="btn btn-warning">Back</a>
+           <a href="/games" type="button" class="btn btn-warning">Back</a>
         </form>
 
       </section>
     </section>
-
-  
-  {{else}}
-    <h1 class="notcreated text-center">There are not games created</h1>
-  {{/if}}
- 
 
 </section>

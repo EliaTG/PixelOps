@@ -16,10 +16,12 @@ const Game = sequelize.define("games",{
         type: Sequelize.STRING,
         allowNull: false,
     },
-    imageUrl:{
+    imgUrl:{
         type: Sequelize.STRING,
         allowNull: true,
     },
+  },  {
+    timestamps: false, 
 });
 
 module.exports = Game;

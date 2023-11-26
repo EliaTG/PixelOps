@@ -173,7 +173,16 @@ img.cover-img {
 .btn-warning, .btn-danger, .btn-primary{
     margin: 0 10px 10px 0;
 }
-
+.btns{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.btnEdit, .btnDelete{
+    display:block;
+    margin: 15px 5px 15px 5px;
+    
+}
 /* 404 not found */
 div.notfound{
     display: flex;
